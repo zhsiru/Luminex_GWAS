@@ -19,7 +19,7 @@ Lum_case_inf <- Lum_case[ which(Lum_case$DSO < 30), ]
 ###select max value sample per individual and log+standardize transform
 Lum_case_inf_max <- Lum_case_inf %>%
   group_by(GWAS_ID) %>%  
-  summarise_at(vars(30:57), max)
+  summarise_at(vars(29:49), max)
 Lum_case_inf_max_norm <- Lum_case_inf_max
 Lum_case_inf_max_norm[c(2:29)] <- scale(log(Lum_case_inf_max[c(2:29)]))
 
